@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { ShopComponent } from './shop/shop.component';
 import { ShopDetailComponent } from './shop-detail/shop-detail.component';
+import { ExploreComponent } from './explore/explore.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { ShopDetailComponent } from './shop-detail/shop-detail.component';
     RegisterComponent,
     HomeComponent,
     ShopComponent,
-    ShopDetailComponent
+    ShopDetailComponent,
+    ExploreComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

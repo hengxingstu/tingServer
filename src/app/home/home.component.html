@@ -1,0 +1,57 @@
+<body>
+  <header class="header-area overlay">
+    <nav class="navbar navbar-expand-md navbar-dark">
+		<div class="container">
+			<a href="#" class="navbar-brand">Ting.com</a>
+
+			<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+				<span class="menu-icon-bar"></span>
+				<span class="menu-icon-bar"></span>
+				<span class="menu-icon-bar"></span>
+			</button>
+
+			<div id="main-nav" class="collapse navbar-collapse">
+				<ul class="navbar-nav ml-auto">
+					<li><a href="#" class="nav-item nav-link active">Home</a></li>
+					<li><a class="nav-item nav-link">About Us</a></li>
+					<li *ngIf="!isLogin()"><a href="{{webUrl}}/login" class="nav-item nav-link">login</a></li>
+          <li *ngIf="isLogin()" ><a href="/profile" class="nav-item nav-link" >welcome,{{user.username}}</a></li>
+          <li *ngIf="isLogin()" ><a class="nav-item nav-link" (click)="logout()">logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="banner">
+		<div class="container">
+			<h1>使用最新的技术</h1>
+			<p>使用决策树算法推荐，给你更多你喜欢的</p>
+			<a href="#recomender" class="button button-primary">让我康康</a>
+		</div>
+	</div>
+</header>
+
+<main>
+	<section id="content" class="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<p>if they throw stones at you, don’t throw back, use them to build your own foundation instead.</p>
+				</div>
+				<div class="col-md-4">
+					<p>success is the ability to go from one failure to another with no loss of enthusiasm.</p>
+				</div>
+				<div class="col-md-4">
+					<p>if you would go up high , then use your own legs! do not let yourselves carried aloft; do not seat yourselves on other people’s backs and heads .</p>
+				</div>
+			</div>
+      <div class="row">
+        <app-shop *ngIf="isLogin()"></app-shop>
+        <!-- <app-shop></app-shop> -->
+      </div>
+		</div>
+	</section>
+
+</main>
+
+</body>

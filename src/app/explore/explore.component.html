@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<!-- 热品推荐 -->
+<hr>
+<div id="recomender" class="container">
+  <h3 class="h3">{{title}}</h3>
+  <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of Products">
+          <div class="product-grid4">
+              <div class="product-image4">
+                  <a href="/product/{{product.productId}}">
+                      <img class="pic-1" src="{{product.imageUrl}}">
+                      <img class="pic-2" src="{{product.imageUrl}}">
+                  </a>
+                  <ul class="social">
+                      <li><a href="/product/{{product.productId}}" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                  </ul>
+                  <span class="product-new-label">全新</span>
+                  <span class="product-discount-label">-10%</span>
+              </div>
+              <div class="product-content">
+                <ul *ngIf="product.score! == 0"  class="rating">
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! > 0 && product.score! < 1" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 1 && product.score! < 2" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 2 && product.score! < 3" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 3 && product.score! < 4" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 4 && product.score! < 5" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star "></li>
+                  <li class="fa fa-star "></li>
+                  <li class="fa fa-star "></li>
+                  <li class="fa fa-star "></li>
+                </ul>
+                  <h3 class="title"><a href="/product/{{product.productId}}">{{product.name}}</a></h3>
+                  <div class="price">
+                      $14.40
+                      <span>$16.00</span>
+                  </div>
+                  <a class="add-to-cart" href="">加到购物车</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+

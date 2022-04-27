@@ -1,0 +1,128 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+<div class="container">
+  <!-- product -->
+  <div class="product-content product-wrap clearfix product-deatil">
+    <div class="row">
+      <div class="col-md-5 col-sm-12 col-xs-12">
+        <div class="product-image">
+          <img src="{{product.imageUrl}}" class="img-responsive" alt="" />
+        </div>
+      </div>
+
+      <div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
+        <h2 class="name">
+          {{product.name}}
+          <small>商品来自 <a href="#">Adeline</a></small>
+          <span *ngIf="product.score! > 0 && product.score! < 1">
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+          </span>
+          <span *ngIf="product.score! >= 1 && product.score! < 2">
+            <i class="fa fa-star fa-2x text-primary"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+          </span>
+          <span *ngIf="product.score! >= 2 && product.score! < 3">
+            <i class="fa fa-star fa-2x text-primary"></i>
+            <i class="fa fa-star fa-2x text-primary"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+          </span>
+          <span *ngIf="product.score! >= 3 && product.score! < 4">
+            <i class="fa fa-star fa-2x text-primary"></i>
+            <i class="fa fa-star fa-2x text-primary"></i>
+            <i class="fa fa-star fa-2x text-primary"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+          </span>
+          <span *ngIf="product.score! >= 4 && product.score! < 5">
+            <i class="fa fa-star fa-2x text-primary"></i>
+            <i class="fa fa-star fa-2x text-primary"></i>
+            <i class="fa fa-star fa-2x text-primary"></i>
+            <i class="fa fa-star fa-2x text-primary"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+          </span>
+          <span *ngIf="product.score! == 0">
+            <p style="padding-top: 5px;font-size: 15px!important">{{product.score}}</p>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+            <i class="fa fa-star fa-2x text-muted"></i>
+          </span>
+          <span class="fa fa-2x">
+            <h5>(109) Votes &nbsp;</h5>
+          </span>
+          <a href="#">109 customer reviews</a>
+        </h2>
+        <hr />
+        <h3 class="price-container">
+          $14.40
+          <small>*税后</small>
+        </h3>
+        <div class="certified">
+          <ul>
+            <li>
+              <a href="#">快递平均用时<span>7 工作日</span></a>
+            </li>
+            <li>
+              <a href="#">检验机构<span>Quality Assured</span></a>
+            </li>
+          </ul>
+        </div>
+        <hr />
+
+        <div class="product_meta">
+          <div class="categories">
+            <strong>商品类别:</strong>
+            <span *ngFor="let tag of product.categories?.split('|')" class="">
+              <a href=""><span class="tags badge bg-secondary text-light">{{tag}}</span></a>
+            </span>
+          </div>
+          <div class="tags">
+            <strong>大家的标签:</strong>
+            <span *ngFor="let tag of product.tags?.split('|')" class="">
+              <a href=""><span class="tags badge bg-secondary text-light">{{tag}}</span></a>
+            </span>
+          </div>
+        </div>
+
+        <hr>
+        <div class="description description-tabs">
+          <p>该商品的描述</p>
+          <div class="tab-pane">
+            <strong>- 卓越的品质</strong>
+            <p>
+              iPhone 13 mini和iPhone
+              13拥有不少相同的特色。它们超先进的双摄系统在低光环境下能拍出更出色的照片和视频，并支持电影效果模式和摄影风格；都配备了强大的A15仿生芯片，以及更明亮的超视网膜XDR显示屏；均支持超快的5G3;也都采用了超瓷晶面板，设计坚固耐用。
+            </p>
+            <strong>- 强的很</strong>
+            <p>
+              Pro级摄像头系统，能力强悍提升；显示屏响应之快，让体验全面刷新；芯片速度再创 iPhone 巅峰；坚固耐用的设计，出类拔萃；电池续航更是大步飞跃。来吧，Pro 起来。RMB 333/月起或 RMB 7999
+              起，还可折抵换购。
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <a class="btn btn-success btn-lg">Add to cart ($14.40)</a>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="btn-group pull-right">
+              <button class="btn btn-outline-dark btn-default"><i class="fa fa-star"></i> Add to wishlist</button>
+              <button class="btn btn-outline-dark btn-default"><i class="fa fa-envelope"></i> Contact Seller</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end product -->
+</div>

@@ -1,0 +1,258 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<!-- 热品推荐 -->
+<hr>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<div class="container">
+    <br/>
+	<div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <form class="card card-sm">
+                                <div class="card-body row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        <i class="fas fa-search h4 text-body"></i>
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col">
+                                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col-auto">
+                                        <button class="btn btn-lg btn-success" type="submit">Search</button>
+                                    </div>
+                                    <!--end of col-->
+                                </div>
+                            </form>
+                        </div>
+                        <!--end of col-->
+                    </div>
+</div>
+<hr>
+<div id="recomender" class="container">
+  <span>
+    <h3 class="h3">热卖商品</h3>
+    <a type="button" class="more-btn btn btn-primary" href="explore/hot">查看更多</a>
+  </span>
+
+  <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of hotProducts">
+          <div class="product-grid4">
+              <div class="product-image4">
+                  <a href="/product/{{product.productId}}">
+                      <img class="pic-1" src="{{product.imageUrl}}">
+                      <img class="pic-2" src="{{product.imageUrl}}">
+                  </a>
+                  <ul class="social">
+                      <li><a href="/product/{{product.productId}}" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                  </ul>
+                  <span class="product-new-label">全新</span>
+                  <span class="product-discount-label">-10%</span>
+              </div>
+              <div class="product-content">
+                <ul *ngIf="product.score! == 0"  class="rating">
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! > 0 && product.score! < 1" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 1 && product.score! < 2" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 2 && product.score! < 3" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 3 && product.score! < 4" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 4 && product.score! < 5" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star "></li>
+                  <li class="fa fa-star "></li>
+                  <li class="fa fa-star "></li>
+                  <li class="fa fa-star "></li>
+                </ul>
+                  <h3 class="title"><a href="/product/{{product.productId}}">{{product.name}}</a></h3>
+                  <div class="price">
+                      $14.40
+                      <span>$16.00</span>
+                  </div>
+                  <a class="add-to-cart" href="">加到购物车</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- 决策树推荐 -->
+<hr>
+<div class="container">
+  <h3 class="h3">基于决策树推荐</h3>
+  <p>基于决策树推荐，最新的技术，给你最喜欢的</p>
+  <a type="button" class="more-btn btn btn-primary" href="explore/dt">查看更多</a>
+  <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of streamProducts">
+          <div class="product-grid4">
+              <div class="product-image4">
+                  <a href="/product/{{product.productId}}">
+                      <img class="pic-1" src="{{product.imageUrl}}">
+                      <img class="pic-2" src="{{product.imageUrl}}">
+                  </a>
+                  <ul class="social">
+                      <li><a href="/product/{{product.productId}}" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                  </ul>
+                  <span class="product-new-label">全新</span>
+                  <span class="product-discount-label">-10%</span>
+              </div>
+              <div class="product-content">
+                <ul *ngIf="product.score! == 0"  class="rating">
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! > 0 && product.score! < 1" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 1 && product.score! < 2" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 2 && product.score! < 3" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 3 && product.score! < 4" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star disable"></li>
+                </ul>
+                <ul *ngIf="product.score! >= 4 && product.score! < 5" class="rating">
+                  <li class="fa fa-star"></li>
+                  <li class="fa fa-star "></li>
+                  <li class="fa fa-star "></li>
+                  <li class="fa fa-star "></li>
+                  <li class="fa fa-star "></li>
+                </ul>
+                  <h3 class="title"><a href="/product/{{product.productId}}">{{product.name}}</a></h3>
+                  <div class="price">
+                      $14.40
+                      <span>$16.00</span>
+                  </div>
+                  <a class="add-to-cart" href="">加到购物车</a>
+              </div>
+          </div>
+      </div>
+      <!-- <div class="col-md-3 col-sm-6">
+          <div class="product-grid4">
+              <div class="product-image4">
+                  <a href="#">
+                      <img class="pic-1" src="https://via.placeholder.com/280x300/B0C4DE/000000">
+                      <img class="pic-2" src="https://via.placeholder.com/280x300/FFB6C1/000000">
+                  </a>
+                  <ul class="social">
+                      <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                  </ul>
+                  <span class="product-discount-label">-12%</span>
+              </div>
+              <div class="product-content">
+                  <h3 class="title"><a href="#">Men's Blue Shirt</a></h3>
+                  <div class="price">
+                      $17.60
+                      <span>$20.00</span>
+                  </div>
+                  <a class="add-to-cart" href="">ADD TO CART</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <div class="product-grid4">
+              <div class="product-image4">
+                  <a href="#">
+                      <img class="pic-1" src="https://via.placeholder.com/280x300/7B68EE/000000">
+                      <img class="pic-2" src="https://via.placeholder.com/280x300/FFB6C1/000000">
+                  </a>
+                  <ul class="social">
+                      <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                  </ul>
+                  <span class="product-new-label">New</span>
+                  <span class="product-discount-label">-10%</span>
+              </div>
+              <div class="product-content">
+                  <h3 class="title"><a href="#">Women's Black Top</a></h3>
+                  <div class="price">
+                      $14.40
+                      <span>$16.00</span>
+                  </div>
+                  <a class="add-to-cart" href="">ADD TO CART</a>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+          <div class="product-grid4">
+              <div class="product-image4">
+                  <a href="#">
+                      <img class="pic-1" src="https://via.placeholder.com/280x300/48D1CC/000000">
+                      <img class="pic-2" src="https://via.placeholder.com/280x300/FFB6C1/000000">
+                  </a>
+                  <ul class="social">
+                      <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                      <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                      <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                  </ul>
+                  <span class="product-new-label">New</span>
+                  <span class="product-discount-label">-10%</span>
+              </div>
+              <div class="product-content">
+                  <h3 class="title"><a href="#">Women's Black Top</a></h3>
+                  <div class="price">
+                      $14.40
+                      <span>$16.00</span>
+                  </div>
+                  <a class="add-to-cart" href="">ADD TO CART</a>
+              </div>
+          </div>
+      </div> -->
+  </div>
+</div>
+<hr>
