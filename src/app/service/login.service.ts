@@ -1,7 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { data } from 'jquery';
 import { environment } from 'src/environments/environment';
 import { User } from '../model/user';
 
