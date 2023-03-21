@@ -1,14 +1,6 @@
 # TingServer
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+这是使用Angular开发的前端商城框架，可以搭配[大数据实战——商品推荐系统（Spark, Scala, MongoDB, Kafka, Flume, Redis）](https://github.com/hengxingstu/Recommender-For-Bigdata-Exercise)一起使用，本来这个推荐系统是有一个前端的，但是写的很差。所以我重新写了一份，其中完成了页面展示，商品推荐和详情页，能够展示从redis中获取的商品评分，支持实时推荐。但并不能进行评分操作。
+也是一份毕业设计作品展示，帮人做的，但做完也没得到什么，哭。。。
 
 ## Build
 
